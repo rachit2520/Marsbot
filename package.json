@@ -1,0 +1,16 @@
+{
+    "name": "p1",
+    "version": "1.0.0",
+    "description": "my first chat bot",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "author": "Rachit Preeyong",
+    "license": "ISC",
+    "dependencies": {
+        "botbuilder": "^3.7.0",
+        "restify": "^4.3.0"
+    }
+}
