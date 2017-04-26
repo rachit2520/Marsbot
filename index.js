@@ -30,37 +30,41 @@ server.post('/api/messages', connector.listen());
 //     session.send("Hello World");
 // });
 
-var intentDialog = new builder.IntentDialog();
+// var intentDialog = new builder.IntentDialog();
 
-bot.dialog('/', intentDialog);
+// bot.dialog('/', intentDialog);
 
-intentDialog.onDefault(builder.DialogAction.send('Sorry, I didn\'t understand that.'));
+// intentDialog.onDefault(builder.DialogAction.send('Sorry, I didn\'t understand that.'));
 
-intentDialog.matches(/^Greeting/i, '/greetingDialog');
-intentDialog.matches(/^Size/i, '/sizeDialog');
-intentDialog.matches(/^Distance/i, '/distanceDialog');
-intentDialog.matches(/^Life/i, '/lifeDialog');
+// intentDialog.matches(/^Greeting/i, '/greetingDialog');
+// intentDialog.matches(/^Size/i, '/sizeDialog');
+// intentDialog.matches(/^Distance/i, '/distanceDialog');
+// intentDialog.matches(/^Life/i, '/lifeDialog');
 
-bot.dialog('/greetingDialog',
-    function(session) {
-        session.endDialog('Hi! I\'m a droid from Mars. Ask me questions you have about Mars!');
-    }
-)
+// bot.dialog('/greetingDialog',
+//     function(session) {
+//         session.endDialog('Hi! I\'m a droid from Mars. Ask me questions you have about Mars!');
+//     }
+// )
 
-bot.dialog('/sizeDialog',
-    function(session) {
-        session.endDialog('Mars has a radius of 3,390km, compared to Earth\'s radius which is 6,371km');
-    }
-)
+// bot.dialog('/sizeDialog',
+//     function(session) {
+//         session.endDialog('Mars has a radius of 3,390km, compared to Earth\'s radius which is 6,371km');
+//     }
+// )
 
-bot.dialog('/distanceDialog',
-    function(session) {
-        session.endDialog('Mars is pretty far away from your home planet, Earth. On average, the distance is 225 million km.');
-    }
-)
+// bot.dialog('/distanceDialog',
+//     function(session) {
+//         session.endDialog('Mars is pretty far away from your home planet, Earth. On average, the distance is 225 million km.');
+//     }
+// )
 
-bot.dialog('/lifeDialog',
-    function(session) {
-        session.endDialog('Yes, there is life on Mars although not yet discovered by primitive humans.');
-    }
-)
+// bot.dialog('/lifeDialog',
+//     function(session) {
+//         session.endDialog('Yes, there is life on Mars although not yet discovered by primitive humans.');
+//     }
+// )
+
+bot.dialog('/', function(session) {
+    session.endDialog('Hi, ' + session.message.user.name);
+})
